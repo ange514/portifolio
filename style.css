@@ -1,0 +1,379 @@
+:root {
+    --primary-font: sans-serif;
+    --primary-color: hsl(0, 0%, 94%);
+    --secondary-color: #000000;
+    --text-highlight-color: #4a90e2; /* A color to highlight the text box */
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(7, 7, 7, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--text-highlight-color);
+}
+
+/* Hero Section (Main Content) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px); /* Adjust based on header height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the parent container of the hero section is full height */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    position: relative;
+    /* Change the height to 100vh for a perfect full-screen effect */
+    height: 100vh;
+    width: 100%; /* Ensure it spans the full width */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%); /* Darkens the image */
+}
+.hero-text-overlay {
+    position: absolute;
+    width: 70%;
+    max-width: 600px;
+    padding: 30px;
+    /* border: 2px solid var(--text-highlight-color); */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* backdrop-filter: blur(5px); */
+    text-align: left;
+    transform: translateY(-50px);
+}
+
+.hero-text-overlay p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer Section */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .hero-text-overlay {
+        width: 85%;
+        padding: 20px;
+    }
+}
+/* Services Page */
+.services-page {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border: 1px solid rgba(14, 14, 14, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: var(--text-highlight-color);
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* About Me Section (Frame 3) */
+.about-me-section {
+    padding: 100px 50px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.about-me-title {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.about-me-image-wrapper {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* border: 2px solid var(--text-highlight-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-me-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.quote {
+    font-size: 2.5 em;
+    font-style: bold;
+    /* color: var(--text-highlight-color); */
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.download-cv-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-cv-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+@media (max-width: 992px) {
+    .about-me-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-me-content {
+        text-align: center;
+    }
+}
+/* Contact Section (Frame 4) */
+.contact-section {
+    padding: 100px 50px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid var(--text-highlight-color);
+}
+
+.send-message-btn {
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.send-message-btn:hover {
+    background-color: var(--text-highlight-color);
+    color: var(--primary-color);
+}
+
+.contact-info-wrapper {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.contact-info-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.detail-label {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--text-highlight-color);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
